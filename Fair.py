@@ -13,6 +13,7 @@ class Ticket:
         else:
             return 0
 
+        
 class EventTicket(Ticket):
     def __init__(self, ticket_type, quantity, event_name):
         super().__init__(ticket_type, quantity)
@@ -29,6 +30,7 @@ class EventTicket(Ticket):
         else:
             return base_price
 
+        
 class BookingSystem:
     def __init__(self):
         self.tickets = []
@@ -49,8 +51,8 @@ class BookingSystem:
 booking_system = BookingSystem()
 
 
+
 while True:
-    print(" WELCOME to The Heritage Fest ")
     ticket_type = input("Enter ticket type (adult/child/elder): ")
     if ticket_type not in ["adult", "child", "elder"]:
         print("Invalid ticket type")
@@ -68,6 +70,7 @@ while True:
     if input("Add more tickets? (y/n): ") != "y":
         break
 
+        
 booking_system.display_tickets()
 print("Total price:", booking_system.calculate_total_price())
 print("Thank You! Enjoy The Heritage Fest")
